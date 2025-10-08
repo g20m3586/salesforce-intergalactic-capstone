@@ -28,7 +28,7 @@ This document maps every capstone requirement to concrete work items, recommende
 
 ---
 
-# 1 Objectives & deliverables mapping
+# 1) Objectives & deliverables mapping
 
 Each capstone **Section** is mapped to artifacts you should produce and where to keep them in your repo.
 
@@ -45,7 +45,7 @@ Each capstone **Section** is mapped to artifacts you should produce and where to
 
 ---
 
-# 2 Milestones & suggested order (work sequentially)
+# 2) Milestones & suggested order (work sequentially)
 
 **Milestone 0 — Prep (1 day)**
 
@@ -91,7 +91,7 @@ Each capstone **Section** is mapped to artifacts you should produce and where to
 
 ---
 
-# 12 Milestone Documentation
+# 12) Milestone Documentation
 
 ## Milestone 0 — Environment Setup & Project Initialization
 
@@ -178,4 +178,57 @@ Prepare your Salesforce development environment and create the base project stru
 
 ---
 
-This section is now ready to track Milestone 0 progress. Subsequent milestones (Data Modeling, Automation, Apex, UI, etc.) will follow with the same documentation structure for iterative tracking.
+## Milestone 1 — Data Modeling
+
+### Objective
+
+Build the core Salesforce data model for Intergalactic Freight & Trade Corp., including `Shipment`, `Cargo`, and `Customs Document`, with fields, relationships, picklists, and duplicate rules.
+
+### Steps Completed
+
+1. **Custom Objects Created**
+
+   * `Shipment`
+   * `Cargo`
+   * `Customs Document` (junction object)
+
+2. **Fields & Picklists Added**
+
+   * **Shipment**: Departure Date, ETA, Ship Capacity, Shipping Method, Status, Assigned Agent
+
+     * Picklists: Shipping Method (Standard, Express, Interplanetary), Status (Pending, In Transit, Delivered, Delayed)
+   * **Cargo**: Weight, Category, Value
+
+     * Picklist: Category (Electronics, Food, Machinery, Hazardous)
+   * **Customs Document**: Shipment (lookup), Cargo (lookup), Status, Clearance Date
+
+     * Picklist: Status (Pending, Approved, Rejected)
+
+3. **Relationships (via Salesforce Setup)**
+
+   * Master-Detail: Cargo → Shipment
+   * Lookup: Customs Document → Shipment
+   * Lookup: Customs Document → Cargo
+
+4. **Duplicate Rules (via Salesforce Setup)**
+
+   * Accounts: match on Account Name, block duplicates
+   * Contacts: match on Email, block duplicates
+
+5. **Deployment / Verification**
+
+   * Verified objects, fields, relationships, picklists, and duplicate rules exist in scratch org
+   * Scratch org ready for next milestone
+
+### Milestone 1 Deliverables Table
+
+| Task                           | Status | Notes                                                     |
+| ------------------------------ | ------ | --------------------------------------------------------- |
+| Create custom objects          | ✅      | Shipment, Cargo, Customs Document                         |
+| Add fields & picklists         | ✅      | As specified above                                        |
+| Create relationships           | ✅      | Master-Detail and Lookup relationships via Setup          |
+| Create duplicate rules         | ✅      | Accounts & Contacts, via Setup                            |
+| Deploy / verify in scratch org | ✅      | Objects verified; ready for automation & validation rules |
+
+---
+
