@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <custom>true</custom>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Shipment_Number__c.Assigned_Agent__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Shipment_Number__c.Shipping_Method__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <layoutAssignments>
+        <layout>Cargo_Name__c-Cargo Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Customs_Document__c-Customs Document Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Shipment_Number__c-Shipment Layout</layout>
+    </layoutAssignments>
+    <userLicense>External Apps Login</userLicense>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EnableNotifications</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>SelectFilesFromSalesforce</name>
+    </userPermissions>
+</Profile>
